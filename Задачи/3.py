@@ -1,6 +1,8 @@
 import math
 
 
+
+
 class Shape:
     """Фигура"""
     def area(self) -> int | float:
@@ -42,11 +44,52 @@ class Rectangle(Shape):
         return (self.a + self.b) * 2
 
 
+class Triangle(Shape):
+    """Треугольник"""
+    def __init__(self, a: int | float, b: int | float, c: int | float):
+        """a,b,c - стороны треугольника"""
+        self.a = a
+        self.b = b
+        self.c = c
+
+
+    def area(self) -> int | float:
+        p=(self.a + self.b + self.c)/2
+        """s в квадрате"""
+        s=p*(p-self.a)*(p-self.b)*(p-self.c)**0.5
+        return s
+
+
+
+    def perimeter(self) -> int | float:
+        return self.a + self.b + self.c
+
+    def is_equilateral(self) -> bool:
+        """Является ли треугольник равносторонним"""
+        if self.a == self.b == self.c:
+            return True
+        else:
+            return False
+
+    def is_isosceles(self) -> bool:
+        """Является ли треугольник равнобедренным"""
+        if self.a == self.b or self.a == self.c or self.b == self.c:
+            return True
+        else:
+            return False
+
+
+
+
 shape1=Circle(5)
 shape2=Rectangle(3, 6.7)
 print(f'Круг: площадь {shape1.area()}, длина окружности {shape1.perimeter()}')
 print(f'Прямоугольник: площадь {shape2.area()}, периметр {shape2.perimeter()}')
-
+shape3=Triangle(15, 30, 25.3)
+print(shape3.perimeter())
+print(shape3.is_equilateral())
+print(shape3.is_isosceles())
+print(shape3.area())
 
 
 
