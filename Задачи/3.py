@@ -86,11 +86,8 @@ shape2=Rectangle(3, 6.7)
 print(f'Круг: площадь {shape1.area()}, длина окружности {shape1.perimeter()}')
 print(f'Прямоугольник: площадь {shape2.area()}, периметр {shape2.perimeter()}')
 shape3=Triangle(15, 30, 25.3)
-print(shape3.perimeter())
-print(shape3.is_equilateral())
-print(shape3.is_isosceles())
-print(shape3.area())
-
+print(f'Треугольник: площадь {shape3.area()}, периметр {shape3.perimeter()}')
+print(f"Треугольник равносторонний: {shape3.is_equilateral()}, равнобедренный {shape3.is_isosceles()} ")
 
 
 
